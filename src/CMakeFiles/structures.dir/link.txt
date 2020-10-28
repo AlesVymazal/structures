@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++14 -g   CMakeFiles/structures.dir/src/main.cpp.o  -o structures -rdynamic 

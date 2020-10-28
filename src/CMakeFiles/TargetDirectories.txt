@@ -1,3 +1,0 @@
-/home/alda/Desktop/structures/CMakeFiles/edit_cache.dir
-/home/alda/Desktop/structures/CMakeFiles/rebuild_cache.dir
-/home/alda/Desktop/structures/CMakeFiles/structures.dir

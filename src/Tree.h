@@ -1,30 +1,34 @@
 #pragma once
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <vector>
+#include <memory>
+#include <queue>
+#include <stack>
+#include <tuple>
+
+template<typename T>
 struct Node {
-    Node(const int data);
-    int data_;
-    Node* right_;
-    Node* left_;
+  Node(T data);
+  T data_;
+  std::unique_ptr<Node> left_;
+  std::unique_ptr<Node> right_;
+  ~Node();
 };
+
+template<typename T>
 class BST {
 public:
-    BST();
-    BST(const BST& other);
-    ~BST();
-    void insert(const int data);
-    void print();
-    void remove(const int data);
-    bool contains(const int data);
-    void parentOfSmallest(Node* start);
-    void save(const std::string& filename);
-
+  BST();
+  ~BST();
+  BST(const BST& other);
+  void insert(const T data);
+  void remove(const T data);
+  bool contains(const T data) const;
+  void save(const std::string& filename) const;
+  void printBFS() const;
+  void printDFS() const;
+  std::tuple<Node<T>*, Node<T>*, char, char> find(const int data) const;
 private:
-    Node* root_ = nullptr;
-    Node* tree_ = nullptr;
-    Node* parent_ = nullptr;
-    std::vector<Node*> currentNodes_;
-    std::vector<Node*> removedNodes_;
-    std::vector<std::pair<int, int> > edges_;
+  Node<T>* root_;
 };

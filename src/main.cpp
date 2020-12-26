@@ -2,7 +2,7 @@
 
 int main(int argc, char* argv[])
 {
-    BST tree;
+    BST<int> tree;
     tree.insert(9);
     tree.insert(11);
     tree.insert(6);
@@ -18,21 +18,18 @@ int main(int argc, char* argv[])
     tree.insert(13);
     tree.insert(8);
     tree.insert(7);
-    tree.print();
+    tree.contains(888);
+    tree.remove(11);
+    tree.remove(7);
+    tree.printBFS();
     tree.save("muj_strom1.dot");
-    std::cout << tree.contains(11) << std::endl;
-    std::cout << tree.contains(7) << std::endl;
-    std::cout << tree.contains(100) << std::endl;
-    std::cout << tree.contains(888) << std::endl;
-    tree.remove(9);
-    tree.remove(3);
-    tree.remove(5);
-    tree.remove(2);
-    std::cout << tree.contains(3) << std::endl;
-    std::cout << tree.contains(5) << std::endl;
-    tree.print();
-    tree.save("muj_strom2.dot");
 
-    BST tree2 = tree;
+    BST<int> tree2 = tree;
+    tree2.insert(0);
+    tree2.insert(999);
+    tree2.printBFS();
+    tree2.save("muj_strom2.dot");
+
     return 0;
 }
+
